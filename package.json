@@ -1,0 +1,19 @@
+{
+  "name": "url_shortener",
+  "version": "1.0.0",
+  "description": "URL shortener microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchill123/url_shortener.git"
+  },
+  "author": "Mckinley Hill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchill123/url_shortener/issues"
+  },
+  "homepage": "https://github.com/mchill123/url_shortener#readme"
+}
