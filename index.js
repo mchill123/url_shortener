@@ -2,7 +2,7 @@ var mongo = require('mongodb')
 var shortid = require('shortid');
 var validUrl = require('valid-url');
 var express = require('express');
-var app = express.Router();
+var app = express();
 var PORT = process.env.PORT || 3000;
 
 
