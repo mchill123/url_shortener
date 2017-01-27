@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/mchill123/url_shortener/issues"
   },
-  "homepage": "https://github.com/mchill123/url_shortener#readme"
+  "homepage": "https://github.com/mchill123/url_shortener#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.22",
+    "shortid": "^2.2.6",
+    "valid-url": "^1.0.9"
+  }
 }
