@@ -14,13 +14,11 @@ mongoc.connect(mLab, function(err, db){
         console.log("mongoDB connnected on port "+ mLab);
     }
     
-    
-    
-    api(app,db);
-    
     app.listen(PORT, function(){
         console.log("node connected on port " + PORT);
     });
+    
+    api(app,db);
     db.close();
 });
 
