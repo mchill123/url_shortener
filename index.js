@@ -21,5 +21,6 @@ mongoc.connect(mLab, function(err, db){
     app.listen(PORT, function(){
         console.log("node connected on port " + PORT);
     });
+    db.close();
 });
 
