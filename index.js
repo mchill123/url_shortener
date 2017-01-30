@@ -17,7 +17,7 @@ mongoc.connect(mLab, function(err, db){
     app.listen(PORT, function(){
         console.log("node connected on port " + PORT);
     });
-    db.create('sites')
+    db.createCollection('sites');
     api(app,db);
     db.close();
 });
