@@ -1,6 +1,6 @@
 var api = require('./api');
 var mongo = require('mongodb');
-var mLab = "mongodb://localhost:27017/url_shortener" || "mongodb://<dbuser>:<dbpassword>@ds137759.mlab.com:37759/heroku_974x9zkh";
+var mLab = "mongodb://localhost:27017/url_shortener" || process.env.MONGOLAB_URI;
 var mongoc = mongo.MongoClient;
 var express = require('express');
 var app = express();
@@ -14,7 +14,7 @@ mongoc.connect(mLab, function(err, db){
         console.log("mongoDB connnected on port "+ mLab);
     }
     
-    db.createCollection('sites');
+    
     
     api(app,db);
     
