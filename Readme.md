@@ -10,4 +10,5 @@ User Story: If I pass an invalid URL that doesn't follow the valid http://www.ex
 
 User Story: When I visit that shortened URL, it will redirect me to my original link.
 
-http://lefkowitz.me/thoughts/2016/05/05/men-stack-building-a-url-shortener-with-mongodb-express-and-node-js/
+
+https://hidden-harbor-50737.herokuapp.com/
