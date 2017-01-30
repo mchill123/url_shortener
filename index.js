@@ -1,6 +1,6 @@
 var api = require('./api');
 var mongo = require('mongodb');
-var mLab = "mongodb://localhost:27017/url_shortener";
+var mLab = "mongodb://localhost:27017/url_shortener" || "mongodb://heroku_974x9zkh:6o51gllljf4mjp7idf37je9ol5@ds137759.mlab.com:37759/heroku_974x9zkh";
 var mongoc = mongo.MongoClient;
 var express = require('express');
 var app = express();
