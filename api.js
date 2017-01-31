@@ -7,7 +7,7 @@ module.exports = function(app, db){
         var sUrl = 1000+Math.floor(Math.random()*9999);
         var sObj = { sUrl: nurl };
         var collection = db.collection('sites');
-        collection.insert(sObj);
+        db.collection.insert(sObj);
         return sUrl;
         
     }
