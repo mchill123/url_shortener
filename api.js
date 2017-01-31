@@ -7,7 +7,9 @@ module.exports = function(app, db){
         var sUrl = 1000+Math.floor(Math.random()*9999);
         var sObj = { sUrl: nurl };
         var sites = db.collection('sites');
-        sites.save(sObj);
+        sites.insertOne(sObj, function(err, call){
+            if (err) throw err;
+        });
         return sUrl;
         
     }
@@ -21,6 +23,8 @@ module.exports = function(app, db){
             'Shortened URL': sUrl
         };
         res.send(dObj);
+        
+        
         
         
     }
