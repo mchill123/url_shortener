@@ -5,8 +5,8 @@ module.exports = function(app, db){
         
     function handleUrl(req, res){
         var nUrl = req.params.url;
-        console.log(req);
-        res.send(req.rawHeaders[17] +'://'+ req.rawHeaders[1] +'______'+ req.rawHeaders[9]);
+        res.send(req.get('referer'));
+        
         
     }
 } ;
