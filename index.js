@@ -1,6 +1,6 @@
-var api = require('./api');
+var api = require('./api.js');
 var mongo = require('mongodb');
-var mLab = process.env.MONGOLAB_URI;
+var mLab = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/url_shortener';
 var mongoc = mongo.MongoClient;
 var express = require('express');
 var app = express();
