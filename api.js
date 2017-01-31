@@ -18,9 +18,11 @@ module.exports = function(app, db){
   
   
     function shortenSave(nurl){
-        var sUrl = (1000+Math.floor(Math.random()*9999)).toString();
-        var sObj = { sUrl: nurl };
+        var sUrl = (1000+Math.floor(Math.random()*8999)).toString();
+        var sObj = {};
+        sObj[sUrl]=nurl;
         save(sObj, db);
+        console.log(sObj);
         return sUrl;
          }
          
@@ -28,8 +30,8 @@ module.exports = function(app, db){
         var sites = db.collection('sites');
         sites.save(sObj, function(err,result){
             if (err) throw err;
-            console.log('saved'+ result)
-        })
+            console.log('saved'+ result);
+        });
          }
     
 } ;
