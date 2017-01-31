@@ -5,6 +5,6 @@ module.exports = function(app, db){
         
     function handleUrl(req, res){
         var nUrl = req.params.url;
-        res.send(process.env.APP_URL);
+        res.send(process.env);
     }
 } ;
