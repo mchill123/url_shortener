@@ -6,8 +6,8 @@ module.exports = function(app, db){
     function shortenSave(nurl){
         var sUrl = 1000+Math.floor(Math.random()*9999);
         var sObj = { sUrl: nurl };
-        var collection = db.collection('sites');
-        db.collection.insert(sObj);
+        var sites = db.collection('sites');
+        sites.save(sObj);
         return sUrl;
         
     }
