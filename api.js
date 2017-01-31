@@ -20,12 +20,17 @@ module.exports = function(app, db){
     function shortenSave(nurl){
         var sUrl = 1000+Math.floor(Math.random()*9999);
         var sObj = { sUrl: nurl };
-        var sites = db.collection('sites');
-        sites.save(sObj, function(err, call){
-            if (err) throw err;
-            console.log('saved '+ sObj);
-        });
+        
+        save(sObj);
         return sUrl;
+         }
+         
+    function save(sObj, db){
+        var sites = db.collection('sites');
+        sites.save(sObj, function(err,result){
+            if (err) throw err;
+            console.log('saved'+ result)
+        })
          }
     
 } ;
