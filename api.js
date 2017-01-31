@@ -20,8 +20,7 @@ module.exports = function(app, db){
     function shortenSave(nurl){
         var sUrl = 1000+Math.floor(Math.random()*9999);
         var sObj = { sUrl: nurl };
-        
-        save(sObj);
+        save(sObj, db);
         return sUrl;
          }
          
