@@ -1,8 +1,11 @@
 
 
 module.exports = function(app, db){
-    app.get('/new/:url*', handleUrl);
-    app.get('/*', searchReturn);
+    app.all('/new/:url*', handleUrl);
+    app.all('/:url', searchReturn);
+    app.all('/', function(req,res){
+        res.send('HELLO!');
+    });
         
    
     function handleUrl(req, res){
@@ -12,7 +15,7 @@ module.exports = function(app, db){
         var dObj = {
             'Original URL': oUrl,
             'Shortened URL': sUrl
-        }
+        };
         res.send(dObj);
     }
         
