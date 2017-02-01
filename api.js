@@ -48,12 +48,12 @@ module.exports = function(app, db){
     function searchReturn(req, res){
         
         var sl = (req.url).slice(4);
+        console.log(sl);
         var search = { 'short': sl};
         var sites = db.collection('sites');
         sites.find(search).toArray(function(err, data){
             if (err) throw err;
             var orig = data.original;
-            console.log(sl);
             res.redirect(orig);
             
         });
