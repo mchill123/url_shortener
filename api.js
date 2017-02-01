@@ -12,9 +12,8 @@ module.exports = function(app, db){
         var dObj = {
             'Original URL': oUrl,
             'Shortened URL': sUrl
-        };
-        res.send(dObj);
         }
+        res.send(dObj);
         
   
   
