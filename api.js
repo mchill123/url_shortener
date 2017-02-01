@@ -27,7 +27,9 @@ module.exports = function(app, db){
   
     function shortenSave(nurl){
         var sUrl = (1000+Math.floor(Math.random()*8999)).toString();
-        var sObj = {};
+        var sObj = { 'short': sUrl,
+            'original' : nurl
+        };
         sObj[sUrl]=nurl;
         save(sObj, db);
         console.log(sObj);
@@ -45,14 +47,14 @@ module.exports = function(app, db){
          }
          
     function searchReturn(req, res){
-        var search = {};
+        
         var sl = (req.url).slice(1);
-        search[sl]= {$exists: true};
+        var search = { 'short': sl};
         var sites = db.collection('sites');
         sites.findOne(search, function(err, data){
             if (err) throw err;
             console.log(typeof(sl));
-            res.send(data.sUrl);
+            res.send(data.original);
             
         });
         
