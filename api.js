@@ -47,7 +47,7 @@ module.exports = function(app, db){
          
     function searchReturn(req, res){
         
-        var sl = (req.url).slice(1);
+        var sl = (req.url).slice(4);
         var search = { 'short': sl};
         var sites = db.collection('sites');
         sites.find(search).toArray(function(err, data){
