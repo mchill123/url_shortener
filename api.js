@@ -14,6 +14,7 @@ module.exports = function(app, db){
             'Shortened URL': sUrl
         }
         res.send(dObj);
+    }
         
   
   
@@ -47,5 +48,4 @@ module.exports = function(app, db){
         });
         
     }
-    
-} ;
+    };
