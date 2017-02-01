@@ -51,8 +51,8 @@ module.exports = function(app, db){
         var sites = db.collection('sites');
         sites.findOne(search, function(err, data){
             if (err) throw err;
-            console.log(sl.typeof());
-            res.send(data);
+            console.log(typeof(sl));
+            res.send(data[sl]);
             
         });
         
