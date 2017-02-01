@@ -52,7 +52,7 @@ module.exports = function(app, db){
         sites.findOne(search, function(err, data){
             if (err) throw err;
             console.log(typeof(sl));
-            res.send(data);
+            res.send(data[(req.url).slice(1)]);
             
         });
         
