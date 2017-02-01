@@ -1,4 +1,4 @@
-
+'use strict';
 
 module.exports = function(app, db){
     app.all('/new/:url*', handleUrl);
