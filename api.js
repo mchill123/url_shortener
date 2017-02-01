@@ -7,7 +7,7 @@ module.exports = function(app, db){
     res.sendFile(filename);
 });
     app.all('/new/:url*', handleUrl);
-    app.all('/*', searchReturn);
+    app.all('/sm/', searchReturn);
    
         
    
@@ -15,7 +15,7 @@ module.exports = function(app, db){
         console.log('handled');
         var nUrl =req.url.slice(5);
         var oUrl = req.protocol+"://"+req.get('host')+req.url;
-        var sUrl = req.protocol+"://"+req.get('host')+'/'+shortenSave(nUrl);
+        var sUrl = req.protocol+"://"+req.get('host')+'/sm/'+shortenSave(nUrl);
         var dObj = {
             'Original URL': oUrl,
             'Shortened URL': sUrl
