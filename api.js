@@ -50,7 +50,7 @@ module.exports = function(app, db){
         var sl = (req.url).slice(1);
         var search = { 'short': sl};
         var sites = db.collection('sites');
-        sites.findOne(search).toArray(function(err, data){
+        sites.find(search).toArray(function(err, data){
             if (err) throw err;
             var orig = data.original;
             res.redirect(orig);
