@@ -3,9 +3,7 @@
 module.exports = function(app, db){
     app.all('/new/:url*', handleUrl);
     app.all('/:url', searchReturn);
-    app.all('/', function(req,res){
-        res.send('HELLO!');
-    });
+    
         
    
     function handleUrl(req, res){
