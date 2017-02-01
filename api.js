@@ -50,12 +50,12 @@ module.exports = function(app, db){
         var sl = (req.url).slice(1);
         var search = { 'short': sl};
         var sites = db.collection('sites');
-        sites.findOne(search, function(err, data){
+        sites.findOne(search).toArray(function(err, data){
             if (err) throw err;
+            res.send(data)
+        })
             
-            res.send(data);
-            
-        });
+       
         
     }
     };
