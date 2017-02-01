@@ -2,11 +2,12 @@
 
 module.exports = function(app, db){
     app.all('/new/:url*', handleUrl);
-    app.all('/:url', searchReturn);
+    app.all('/*', searchReturn);
    
         
    
     function handleUrl(req, res){
+        console.log('handled');
         var nUrl =req.url.slice(5);
         var oUrl = req.protocol+"://"+req.get('host')+req.url;
         var sUrl = req.protocol+"://"+req.get('host')+'/'+shortenSave(nUrl);
