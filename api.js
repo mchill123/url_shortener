@@ -53,7 +53,7 @@ module.exports = function(app, db){
         sites.findOne(search, function(err, data){
             if (err) throw err;
             var orig = data.original
-            res.send(orig);
+            res.redirect(orig);
             
         });
         
