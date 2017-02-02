@@ -1,5 +1,6 @@
 'use strict';
 var path = require('path');
+var validUrl = require('valid-url');
 
 module.exports = function(app, db){
     app.all('/', function(req,res){
@@ -14,13 +15,13 @@ module.exports = function(app, db){
     function handleUrl(req, res){
         console.log('handled');
         var nUrl =req.url.slice(5);
-        if(nUrl = valid){
         var oUrl = req.protocol+"://"+req.get('host')+req.url;
         var sUrl = req.protocol+"://"+req.get('host')+'/sm/'+shortenSave(nUrl);
         var dObj = {
             'Original URL': oUrl,
             'Shortened URL': sUrl
         };
+        if(validUrl.isUri(nUrl)){
         res.send(dObj);
         }
         else res.send('Please enter valid url');
@@ -53,16 +54,16 @@ module.exports = function(app, db){
         var sl = (req.url).slice(4);
         var search = { 'short': sl};
         var sites = db.collection('sites');
-        
-        if(db has search){
         sites.find(search).toArray(function(err, data){
             if (err) throw err;
             var orig = data;
+            if(data.length > 0){
             res.redirect(orig[0].original);
-            
+            }
+            else res.send('Record not found. Please enter valid short url');
         });
         }
-        else res.send('Record not found. Please enter valid short url')
         
-    }
+        
+    
     };
