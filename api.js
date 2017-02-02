@@ -53,7 +53,7 @@ module.exports = function(app, db){
         sites.find(search).toArray(function(err, data){
             if (err) throw err;
             var orig = data;
-            res.send(orig);
+            res.send(orig[0].original);
             
         });
         
