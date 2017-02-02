@@ -7,7 +7,7 @@ module.exports = function(app, db){
     res.sendFile(filename);
 });
     app.all('/new/:url*', handleUrl);
-    app.all('/sm/', searchReturn);
+    app.all('/sm/*', searchReturn);
    
         
    
@@ -49,6 +49,14 @@ module.exports = function(app, db){
         
         var sl = (req.url).slice(4);
         res.send(sl);        
+        var search = { 'short': sl};
+        var sites = db.collection('sites');
+        sites.find(search).toArray(function(err, data){
+            if (err) throw err;
+            var orig = data;
+            res.redirect(orig);
+            
+        });
         
     }
     };
